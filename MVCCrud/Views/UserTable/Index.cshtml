@@ -1,0 +1,41 @@
+﻿@Model List<MVCCrud.Models.viewModels.ListUserTablaViewModel>
+    ;
+
+    @{
+        ViewBag.Title = "Personal Data";
+    }
+
+    <h2>@ViewBag.Title</h2>
+
+    <div class="row" style="text-align:left;padding:5px;">   
+        <a href="~/Tabla/Nuevo" class="btn btn-primary">New</a> 
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                </tr>
+                @foreach (var oElemento in Model)
+                {
+            <tr>
+                <td>@oElemento.Id</td>
+                <td>@oElemento.userName</td>
+                <td>@oElemento.email</td>
+                <td>@oElemento.email</td>
+                <td>
+                    <a class="btn btn-default" href="~/UserTable/Editar/@oElemento.Id">Edit</a>
+                    <a class="btn btn-warning" href="~/UserTable/Eliminar/@oElemento.Id">Delete</a>    
+
+                </td>
+            </tr>
+
+                }
+
+            </table>
+        </div>
+
+
+    </div>

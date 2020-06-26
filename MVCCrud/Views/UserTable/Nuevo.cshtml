@@ -1,0 +1,40 @@
+﻿@model MVCCrud.Models.ViewModels.UserTablaViewModel
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>@ViewBag.Title</h2> 
+
+@using (Html.BeginForm("Nuevo","UserTable", FormMethod.Post)) {
+     
+ <div class="row"> 
+    
+     <div class="col-md-12">
+         <div>
+             @Html.LabelFor(d => d.userName)
+             @Html.TextBoxFor(d => d.userName, "", new { @class = "form-control" })
+             @Html.ValidationMessageFor(d=> d.userName, null, new { @class="red" })  
+         </div>
+
+         <div>
+             @Html.LabelFor(d => d.email)
+             @Html.TextBoxFor(d => d.email, "", new { @class = "form-control" })
+             @Html.ValidationMessageFor(d => d.email, null, new { @class = "red" })
+         </div>
+
+         <div>
+             @Html.LabelFor(d => d.birthDate)
+             @Html.EditorFor(d => d.birthDate, "", new { @class = "form-control" })
+             @Html.ValidationMessageFor(d => d.birthDate, null, new { @class = "red" }) 
+         </div>
+
+                 <br />
+                 <div style="text-align:right;">
+                     <input value="Guardar" type="submit" class="btn btn-primary" />
+
+                 </div>
+             </div>
+
+     </div>
+}
+
